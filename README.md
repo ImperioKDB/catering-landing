@@ -11,15 +11,26 @@ That one file drives the whole site. Nothing else needs touching for a content u
 - `menuCategories` — real prices. Guessed prices are worse than no prices.
 - Every `<PhotoSlot label="..." />` across `components/*.tsx` is a dashed-border placeholder. Swap each for a real `<Image>` (see below) once you have photography — this is the single highest-leverage thing left to do.
 
-## Adding real photos
+## Adding real photos — two options
 
-1. Drop images in `/public/images/`, or host them (Supabase Storage, Cloudinary, etc.) and add that domain to `remotePatterns` in `next.config.js`.
-2. Replace `<PhotoSlot label="..." />` with `next/image`:
+**Option A: the /admin photo manager (recommended, no code editing)**
+
+1. Set up Supabase (5 minutes): create a project → run `supabase-setup.sql` in the SQL Editor → in Storage, create a bucket named exactly `landing-images` and toggle it Public.
+2. Copy `.env.example` to `.env.local`, fill in your Supabase URL/keys (Settings → API), set `ADMIN_PASSWORD` to something only you know, and generate `ADMIN_SESSION_SECRET` with `openssl rand -base64 32`.
+3. Add the same four vars in Vercel → Project → Settings → Environment Variables (local `.env.local` only affects local dev, not the deployed site).
+4. Visit `yoursite.com/admin`, log in with `ADMIN_PASSWORD`, and there's an upload button for every photo slot on the page — hero, each service card, each gallery photo, the why-choose-us photo. Upload replaces the placeholder immediately; changes show on the live site within about a minute, no redeploy needed.
+
+**Option B: manual, no admin page**
+
+1. Drop images in `/public/images/`.
+2. Replace the relevant `<SlotImage slotKey="..." .../>` with a plain `next/image`:
    ```tsx
    import Image from "next/image";
    <Image src="/images/red-velvet.jpg" alt="Red velvet cake" fill className="object-cover rounded-2xl" />
    ```
    Keep the parent's `aspect-*` wrapper div — that's what controls the crop.
+
+Option A is worth the 5-minute Supabase setup if you (or your friend) will be swapping photos regularly — no GitHub, no Colab, no redeploy each time.
 
 ## Running locally
 
