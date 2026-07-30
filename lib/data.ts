@@ -27,7 +27,6 @@ export const stats = [
 export const services = [
   {
     id: "cakes",
-    slotKey: "service-cakes",
     title: "Cakes",
     description:
       "Custom cakes for weddings, birthdays and milestones — designed around your theme, flavour and guest count.",
@@ -36,7 +35,6 @@ export const services = [
   },
   {
     id: "small-chops",
-    slotKey: "service-small-chops",
     title: "Small Chops",
     description:
       "Crowd-pleasing platters of spring rolls, puff puff, samosa and more, made fresh and packed for events.",
@@ -45,7 +43,6 @@ export const services = [
   },
   {
     id: "snacks",
-    slotKey: "service-snacks",
     title: "Snacks & Confectionery",
     description:
       "Cupcakes, cookies, chin chin and party favours — sold individually or as gift packs.",
@@ -54,7 +51,6 @@ export const services = [
   },
   {
     id: "event-catering",
-    slotKey: "service-event-catering",
     title: "Event Catering",
     description:
       "Full-service catering for weddings, birthdays and family gatherings, from menu planning to on-site service.",
@@ -63,7 +59,6 @@ export const services = [
   },
   {
     id: "corporate-catering",
-    slotKey: "service-corporate-catering",
     title: "Corporate Catering",
     description:
       "Reliable, professional catering for meetings, launches and office events — on schedule, every time.",
@@ -72,7 +67,6 @@ export const services = [
   },
   {
     id: "bead-jewellery",
-    slotKey: "service-beads",
     title: "Bead Jewellery",
     description:
       "Handcrafted bead necklaces, bracelets and sets — made to order for aso-ebi, gifting or everyday wear.",
@@ -82,15 +76,15 @@ export const services = [
 ];
 
 export const galleryItems = [
-  { id: 1, slotKey: "gallery-wedding-cake", category: "Cakes", label: "Three-tier wedding cake" },
-  { id: 2, slotKey: "gallery-birthday-cake", category: "Cakes", label: "Birthday number cake" },
-  { id: 3, slotKey: "gallery-reception-table", category: "Wedding Setups", label: "Reception dessert table" },
-  { id: 4, slotKey: "gallery-small-chops", category: "Small Chops", label: "Small chops platter" },
-  { id: 5, slotKey: "gallery-birthday-spread", category: "Birthday Packages", label: "Birthday party spread" },
-  { id: 6, slotKey: "gallery-dessert-display", category: "Dessert Tables", label: "Candy & pastry display" },
-  { id: 7, slotKey: "gallery-bead-set", category: "Bead Collections", label: "Aso-ebi bead set" },
-  { id: 8, slotKey: "gallery-cupcake-tower", category: "Cakes", label: "Cupcake tower" },
-  { id: 9, slotKey: "gallery-cake-styling", category: "Wedding Setups", label: "Cake table styling" },
+  { id: 1, category: "Cakes", label: "Three-tier wedding cake" },
+  { id: 2, category: "Cakes", label: "Birthday number cake" },
+  { id: 3, category: "Wedding Setups", label: "Reception dessert table" },
+  { id: 4, category: "Small Chops", label: "Small chops platter" },
+  { id: 5, category: "Birthday Packages", label: "Birthday party spread" },
+  { id: 6, category: "Dessert Tables", label: "Candy & pastry display" },
+  { id: 7, category: "Bead Collections", label: "Aso-ebi bead set" },
+  { id: 8, category: "Cakes", label: "Cupcake tower" },
+  { id: 9, category: "Wedding Setups", label: "Cake table styling" },
 ];
 
 export const galleryCategories = [

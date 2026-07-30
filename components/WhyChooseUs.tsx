@@ -3,14 +3,14 @@
 import * as Icons from "lucide-react";
 import { whyChooseUs } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
-import { SlotImage } from "@/components/ui/SlotImage";
+import { PhotoSlot } from "@/components/ui/PhotoSlot";
 
-export function WhyChooseUs({ images }: { images: Record<string, string> }) {
+export function WhyChooseUs() {
   return (
     <section className="bg-cream py-20 md:py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-5 md:grid-cols-2">
         <Reveal>
-          <SlotImage slotKey="team-plating" images={images} label="Team preparing an order / plating" aspect="aspect-[4/5]" />
+          <PhotoSlot label="Team preparing an order / plating" aspect="aspect-[4/5]" />
         </Reveal>
 
         <div>

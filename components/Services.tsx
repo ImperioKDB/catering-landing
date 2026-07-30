@@ -3,10 +3,10 @@
 import * as Icons from "lucide-react";
 import { services, whatsappLink } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
-import { SlotImage } from "@/components/ui/SlotImage";
+import { PhotoSlot } from "@/components/ui/PhotoSlot";
 import { ArrowUpRight } from "lucide-react";
 
-export function Services({ images }: { images: Record<string, string> }) {
+export function Services() {
   return (
     <section id="services" className="bg-cream py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5">
@@ -30,7 +30,7 @@ export function Services({ images }: { images: Record<string, string> }) {
                   rel="noopener noreferrer"
                   className="group focus-ring block h-full overflow-hidden rounded-2xl bg-ivory shadow-sm ring-1 ring-espresso/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <SlotImage slotKey={s.slotKey} images={images} label={`${s.title} — hero shot`} aspect="aspect-[16/10]" className="rounded-none rounded-t-2xl" />
+                  <PhotoSlot label={`${s.title} — hero shot`} aspect="aspect-[16/10]" className="rounded-none rounded-t-2xl border-0" />
                   <div className="p-6">
                     <div className="mb-3 flex items-center gap-2.5">
                       <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-light/30 text-burgundy">

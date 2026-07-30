@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { MessageCircle, CalendarCheck, BookOpenText } from "lucide-react";
 import { business, whatsappLink } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
-import { SlotImage } from "@/components/ui/SlotImage";
+import { PhotoSlot } from "@/components/ui/PhotoSlot";
 
-export function Hero({ images }: { images: Record<string, string> }) {
+export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-cream pt-32 pb-20 md:pt-40 md:pb-28">
       {/* ambient texture */}
@@ -67,10 +67,10 @@ export function Hero({ images }: { images: Record<string, string> }) {
           className="relative"
         >
           <div className="grid grid-cols-5 grid-rows-5 gap-3">
-            <SlotImage slotKey="hero-main-cake" images={images} label="Hero: signature cake, close-up" className="col-span-3 row-span-3" aspect="aspect-square" />
-            <SlotImage slotKey="hero-small-chops" images={images} label="Small chops platter" className="col-span-2 row-span-2 col-start-4" aspect="aspect-square" />
-            <SlotImage slotKey="hero-beads" images={images} label="Bead jewellery set" className="col-span-2 row-span-3 col-start-4 row-start-3" aspect="aspect-square" />
-            <SlotImage slotKey="hero-dessert-table" images={images} label="Dessert table styling" className="col-span-3 row-span-2 row-start-4" aspect="aspect-square" />
+            <PhotoSlot label="Hero: signature cake, close-up" className="col-span-3 row-span-3" aspect="aspect-square" />
+            <PhotoSlot label="Small chops platter" className="col-span-2 row-span-2 col-start-4" aspect="aspect-square" />
+            <PhotoSlot label="Bead jewellery set" className="col-span-2 row-span-3 col-start-4 row-start-3" aspect="aspect-square" />
+            <PhotoSlot label="Dessert table styling" className="col-span-3 row-span-2 row-start-4" aspect="aspect-square" />
           </div>
           <motion.div
             animate={{ y: [0, -8, 0] }}

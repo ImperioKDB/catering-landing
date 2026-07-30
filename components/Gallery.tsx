@@ -5,9 +5,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { galleryItems, galleryCategories } from "@/lib/data";
 import { Reveal } from "@/components/ui/Reveal";
-import { SlotImage } from "@/components/ui/SlotImage";
+import { PhotoSlot } from "@/components/ui/PhotoSlot";
 
-export function Gallery({ images }: { images: Record<string, string> }) {
+export function Gallery() {
   const [category, setCategory] = useState("All");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -59,9 +59,7 @@ export function Gallery({ images }: { images: Record<string, string> }) {
               className="focus-ring mb-4 block w-full break-inside-avoid"
             >
               <div className="group relative overflow-hidden rounded-xl">
-                <SlotImage
-                  slotKey={item.slotKey}
-                  images={images}
+                <PhotoSlot
                   label={item.label}
                   aspect={i % 3 === 0 ? "aspect-[3/4]" : "aspect-square"}
                   className="transition-transform duration-300 group-hover:scale-[1.03]"
@@ -113,7 +111,7 @@ export function Gallery({ images }: { images: Record<string, string> }) {
               onClick={(e) => e.stopPropagation()}
               className="w-full max-w-md"
             >
-              <SlotImage slotKey={filtered[activeIndex].slotKey} images={images} label={filtered[activeIndex].label} aspect="aspect-[4/5]" className="ring-1 ring-ivory/20" />
+              <PhotoSlot label={filtered[activeIndex].label} aspect="aspect-[4/5]" className="border-ivory/40" />
               <p className="mt-3 text-center font-body text-sm text-ivory/80">{filtered[activeIndex].label}</p>
             </motion.div>
           </motion.div>
