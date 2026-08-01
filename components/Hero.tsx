@@ -78,7 +78,7 @@ export function Hero({ images }: { images: Record<string, string> }) {
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-5 -left-5 rounded-2xl bg-ivory px-5 py-3 shadow-xl ring-1 ring-espresso/10"
+            className="absolute -bottom-8 left-4 rounded-2xl bg-ivory px-5 py-3 shadow-xl ring-1 ring-espresso/10 md:-left-8"
           >
             <p className="font-display text-lg font-semibold text-burgundy">250+</p>
             <p className="font-body text-[11px] text-espresso/70">events served</p>
