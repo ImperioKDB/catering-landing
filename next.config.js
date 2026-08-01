@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // TODO: once real photos are hosted (e.g. Supabase storage, Cloudinary, or /public),
-    // add the domain here. Using unoptimized local placeholders for now.
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
   },
 };
 
