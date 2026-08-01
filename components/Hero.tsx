@@ -9,7 +9,6 @@ import { SlotImage } from "@/components/ui/SlotImage";
 export function Hero({ images }: { images: Record<string, string> }) {
   return (
     <section id="top" className="relative overflow-hidden bg-cream pt-32 pb-20 md:pt-40 md:pb-28">
-      {/* ambient texture */}
       <div className="pointer-events-none absolute inset-0 bg-grain opacity-40" style={{ backgroundSize: "18px 18px" }} />
       <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gold-light/30 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-burgundy/10 blur-3xl" />
@@ -21,7 +20,7 @@ export function Hero({ images }: { images: Record<string, string> }) {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="mb-5 inline-block rounded-full border border-gold/40 bg-gold-light/20 px-4 py-1.5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-espresso-dark">
-            Cakes · Small Chops · Event Catering · Beads
+            Cakes \u00b7 Small Chops \u00b7 Event Catering \u00b7 Beads
           </span>
 
           <h1 className="font-display text-4xl font-semibold leading-[1.1] text-espresso-dark sm:text-5xl md:text-6xl">
@@ -34,7 +33,7 @@ export function Hero({ images }: { images: Record<string, string> }) {
 
           <p className="mt-6 max-w-md font-body text-base leading-relaxed text-espresso/80 md:text-lg">
             {business.name} handcrafts cakes, small chops, snacks and full event catering
-            for weddings, birthdays and corporate events across {business.city} — plus
+            for weddings, birthdays and corporate events across {business.city} \u2014 plus
             handmade bead jewellery for every occasion.
           </p>
 
@@ -66,16 +65,20 @@ export function Hero({ images }: { images: Record<string, string> }) {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          <div className="grid grid-cols-5 grid-rows-5 gap-3">
-            <SlotImage slotKey="hero-main-cake" images={images} label="Hero: signature cake, close-up" className="col-span-3 row-span-3" aspect="aspect-square" />
-            <SlotImage slotKey="hero-small-chops" images={images} label="Small chops platter" className="col-span-2 row-span-2 col-start-4" aspect="aspect-square" />
-            <SlotImage slotKey="hero-beads" images={images} label="Bead jewellery set" className="col-span-2 row-span-3 col-start-4 row-start-3" aspect="aspect-square" />
-            <SlotImage slotKey="hero-dessert-table" images={images} label="Dessert table styling" className="col-span-3 row-span-2 row-start-4" aspect="aspect-square" />
+          <div className="grid grid-cols-2 gap-3">
+            <SlotImage slotKey="hero-main-cake" images={images} label="Hero: signature cake, close-up" aspect="aspect-[3/4]" />
+            <div className="flex flex-col gap-3">
+              <SlotImage slotKey="hero-small-chops" images={images} label="Small chops platter" aspect="aspect-square" />
+              <SlotImage slotKey="hero-beads" images={images} label="Bead jewellery set" aspect="aspect-[4/5]" />
+            </div>
+          </div>
+          <div className="mt-3">
+            <SlotImage slotKey="hero-dessert-table" images={images} label="Dessert table styling" aspect="aspect-[21/9]" />
           </div>
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-5 -left-5 rounded-2xl bg-ivory px-5 py-3 shadow-xl"
+            className="absolute -bottom-5 -left-5 rounded-2xl bg-ivory px-5 py-3 shadow-xl ring-1 ring-espresso/10"
           >
             <p className="font-display text-lg font-semibold text-burgundy">250+</p>
             <p className="font-body text-[11px] text-espresso/70">events served</p>
