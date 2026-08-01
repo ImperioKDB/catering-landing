@@ -20,7 +20,7 @@ export function Hero({ images }: { images: Record<string, string> }) {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="mb-5 inline-block rounded-full border border-gold/40 bg-gold-light/20 px-4 py-1.5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-espresso-dark">
-            Cakes \u00b7 Small Chops \u00b7 Event Catering \u00b7 Beads
+            Cakes Small Chops Event Catering Beads
           </span>
 
           <h1 className="font-display text-4xl font-semibold leading-[1.1] text-espresso-dark sm:text-5xl md:text-6xl">
