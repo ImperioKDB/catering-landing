@@ -6,17 +6,6 @@ import { business, whatsappLink } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 import { SlotImage } from "@/components/ui/SlotImage";
 
-function HeroPhoto({ slotKey, images, label, aspect }: { slotKey: string; images: Record<string, string>; label: string; aspect: string }) {
-  return (
-    <div className="group relative overflow-hidden rounded-2xl">
-      <SlotImage slotKey={slotKey} images={images} label={label} aspect={aspect} className="transition-transform duration-500 group-hover:scale-[1.04]" />
-      {/* consistent warm wash so mismatched source photos read as one designed set */}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-espresso-dark/25 via-transparent to-gold-light/10 mix-blend-multiply" />
-      <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-ivory/20" />
-    </div>
-  );
-}
-
 export function Hero({ images }: { images: Record<string, string> }) {
   return (
     <section id="top" className="relative overflow-hidden bg-cream pt-32 pb-20 md:pt-40 md:pb-28">
@@ -24,7 +13,7 @@ export function Hero({ images }: { images: Record<string, string> }) {
       <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gold-light/30 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-burgundy/10 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-5 md:grid-cols-2 md:gap-8">
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-5 pb-10 md:grid-cols-2 md:gap-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,25 +60,24 @@ export function Hero({ images }: { images: Record<string, string> }) {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="relative"
+          className="relative mx-auto w-full max-w-md md:max-w-none"
         >
-          <div className="grid grid-cols-2 items-start gap-3">
-            <HeroPhoto slotKey="hero-main-cake" images={images} label="Hero: signature cake, close-up" aspect="aspect-[3/4]" />
-            <div className="flex flex-col gap-3">
-              <HeroPhoto slotKey="hero-small-chops" images={images} label="Small chops platter" aspect="aspect-square" />
-              <HeroPhoto slotKey="hero-beads" images={images} label="Bead jewellery set" aspect="aspect-[4/5]" />
-            </div>
-          </div>
-          <div className="mt-3">
-            <HeroPhoto slotKey="hero-dessert-table" images={images} label="Dessert table styling" aspect="aspect-[21/9]" />
+          <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-espresso-dark/20">
+            <SlotImage
+              slotKey="hero-main-cake"
+              images={images}
+              label="Hero: signature cake, close-up"
+              aspect="aspect-[4/5]"
+              className="[&_img]:object-[center_30%]"
+            />
           </div>
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-5 -left-5 rounded-2xl bg-ivory px-5 py-3 shadow-xl ring-1 ring-espresso/10"
+            className="absolute -bottom-6 left-6 rounded-2xl bg-ivory px-5 py-3 shadow-xl ring-1 ring-espresso/10"
           >
             <p className="font-display text-lg font-semibold text-burgundy">250+</p>
             <p className="font-body text-[11px] text-espresso/70">events served</p>
